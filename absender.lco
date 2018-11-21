@@ -18,7 +18,7 @@ fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
 \setkomavar{fromaddress}{% % Adresse
   flipdot e.V. \\
   Franz-Ulrich-Straße 18 \\
-  34117 Kassel
+  34117 Kassel \newline
 }
 % \setkomavar{fromfax}{01234~56789} % Faxnummer
 \setkomavar{fromemail}{com@flipdot.org} % Email-Adresse
