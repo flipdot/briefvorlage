@@ -1,0 +1,52 @@
+\ProvidesFile{absender.lco}
+
+\KOMAoptions{%
+% fromemail=true,       % Email wird im Briefkopf angezeigt
+fromphone=false,        % Telefonnumer wird im Briefkopf NICHT angezeigt
+fromfax=false,          % Faxnummer wird im Briefkopf NICHT angezeit
+% fromurl=true,         % URL wird im Briefkopf angezeigt
+fromlogo=true,          % Logo wird im Briefkopf angezeigt
+% subject=titled,       % Druckt "Betrifft: " vor dem Betreff
+locfield=wide,          % Breite Absenderergänzung (location)
+fromalign=left,         % Ausrichtung des Briefkopfes
+fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[ngerman]{babel}
+
+\setkomavar{fromaddress}{% % Adresse
+  flipdot e.V. \\
+  Franz-Ulrich-Straße 18 \\
+  34117 Kassel
+}
+% \setkomavar{fromfax}{01234~56789} % Faxnummer
+\setkomavar{fromemail}{com@flipdot.org} % Email-Adresse
+% \setkomavar{fromphone}{01234~56789} % Telefonnummer
+\setkomavar{fromurl}[Website:~]{flipdot.org} % Website
+
+\setkomavar{backaddress}{\usekomavar{fromaddress}}
+
+% ===== Absenderergänzung =====
+\setkomavar{location}{%
+  \raggedright\footnotesize{%
+  \usekomavar{fromname}\\
+  \usekomavar{fromaddress}\\
+  \usekomavar*{fromemail}\usekomavar{fromemail}
+  \usekomavar*{fromurl}\usekomavar{fromurl}}%
+}
+% ============================
+
+% Logo
+\setkomavar{fromlogo}{\includegraphics{logo.png}}
+
+% Die Bankverbindung wird nicht automatisch verwendet. Dazu muss bspw. mittels \firstfoot ein eigener Brieffuß definiert werden.
+\setkomavar{frombank}{}
+
+% ===== Signatur =====
+\setkomavar{signature}{%
+  \usekomavar{fromname}\\
+  für flipdot e.V.
+}
+\renewcommand*{\raggedsignature}{\raggedright}
+% ====================

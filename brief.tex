@@ -1,0 +1,34 @@
+\include{header}
+
+% \setkomavar{title}{Titel}
+\setkomavar{fromname}{Dein Name} % Name
+\setkomavar{subject}{Dein Betreff}
+
+\opening{Sehr geehrte Frau Musterfrau,}
+
+hier kommt der Text hin.
+
+\closing{Mit freundlichen Grüßen,}
+
+% ===== Postskriptum =====
+\ps PS: \dots
+% ========================
+
+% ===== Anlage(n) =====
+% \setkomavar*{enclseparator}{Anlage}
+\encl{%
+  Anlage 1\\
+  Anlage 2%
+}
+% ===================
+
+% ===== Verteiler =====
+% \setkomavar*{ccseparator}{Kopie an}
+\cc{%
+  Verteiler 1\\
+  Verteiler 2%
+}
+% =====================
+
+\end{letter}
+\end{document}
